@@ -2,3 +2,6 @@
 venv
 *.vtu
 slurm*.out
+mesh.*
+netgen.prof
+entities.sif
