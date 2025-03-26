@@ -1,0 +1,4 @@
+*.msh
+venv
+*.vtu
+slurm*.out
