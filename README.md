@@ -17,8 +17,10 @@ Kui aega on
 ## Töövoog (for stupid)
 
 Lae moodulid terminalis
-module load rocky8-spack gmsh elmerfem
-module load paraview/5.12.1-gcc-10.3.0-dotq
+
+```module load rocky8-spack gmsh elmerfem```
+
+```module load paraview/5.12.1-gcc-10.3.0-dotq```
 
 1. Teha geomeetria (`.geo`) fail, mis defineerib kujundi 
 2. Teha `.sif` fail, mis määrab simulatsiooni jaoks paremeetrid ja ääretingimused
