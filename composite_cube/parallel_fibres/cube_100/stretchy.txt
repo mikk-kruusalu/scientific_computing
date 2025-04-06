@@ -1,0 +1,8 @@
+epsy = 8.27e-8 / 0.5
+sigmayy = 1000 Pa
+
+E = 2.42e10 Pa
+
+epsx = -1.0876e−8 # slope
+
+nu = 0.065
