@@ -32,4 +32,4 @@ Mesh.CharacteristicLengthMax = L/100 + tol;
 //Physical Volume("Fibres", 44) = {2, 3, 4, 5, 6};
 
 Mesh 3;
-Save "cube.msh";
+Save "cube_100.msh";
