@@ -1,0 +1,8 @@
+epsx = 4.75e-8
+sigmaxx = 1000 Pa
+
+E = 21.1e9 Pa
+
+epsy = 4.2e-9 + 1.43e-9
+
+nu = 0.12
