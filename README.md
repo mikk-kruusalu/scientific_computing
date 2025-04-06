@@ -4,10 +4,10 @@ Esimene projekt on komposiitmaterjali efektiivsete Youngi mooduli ja Poissoni te
 
 - [x] Lihtsa talaga tõmbekatse.
 - [x] Talal on viis paralleelset kiudu, tõmbekatse.
-- [ ] Arvutada samad asjad peenema ja jämedama võrguga.
-- [ ] Lisada päris materjalide omadused paralleelsete kiudude mudelis.
-- [ ] Paralleelsete kiududega teha tõmbekatsed nii piki kui risti suunas ja võrrelda tegureid.
-- [?] Kas sellest piisab või on vaja teha ka suvaliste lühikeste fiibritega?
+- [x] Arvutada samad asjad peenema ja jämedama võrguga.
+- [x] Lisada päris materjalide omadused paralleelsete kiudude mudelis.
+- [x] Paralleelsete kiududega teha tõmbekatsed nii piki kui risti suunas ja võrrelda tegureid.
+- [ ] Arvutada nihkeelastsusmoodulid.
 - [ ] Esitlus
 
 Kui aega on
