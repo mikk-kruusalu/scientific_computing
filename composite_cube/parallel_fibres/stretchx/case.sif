@@ -1,8 +1,8 @@
 Header
   CHECK KEYWORDS Warn
-  Mesh DB "." "cube"
+  Mesh DB "." "../cube"
   Include Path ""
-  Results Directory ""
+  Results Directory "../cube"
 End
 
 Simulation
@@ -15,7 +15,7 @@ Simulation
   Timestepping Method = BDF
   BDF Order = 1
   Solver Input File = case.sif
-  Post File = case.vtu
+  Post File = stretchx.vtu
 End
 
 Constants
@@ -110,11 +110,12 @@ Material 1
   Density = 1410.0
 End
 
+! https://www.performance-composites.com/carbonfibre/mechanicalproperties_2.asp
 Material 2
   Name = "Carbon"
-  Youngs modulus = 32e9
-  Poisson ratio = 0.2
-  Density = 1000.0
+  Youngs modulus = 70e9
+  Poisson ratio = 0.1
+  Density = 1600.0
 End
 
 Boundary Condition 1

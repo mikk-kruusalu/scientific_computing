@@ -10,6 +10,7 @@ export OMP_NUM_THREADS=$SLURM_CPUS_PER_TASK     ### setup environment
 
 module load rocky8-spack elmerfem gmsh
 
-gmsh cube.geo -
-ElmerGrid 14 2 cube.msh -autoclean
+gmsh $1.geo -
+ElmerGrid 14 2 $1.msh -autoclean
+cd $2
 ElmerSolver
