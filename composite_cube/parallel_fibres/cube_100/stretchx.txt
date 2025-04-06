@@ -1,0 +1,8 @@
+epsx = 4.54e-8
+sigmaxx = 1000 Pa
+
+E = 2.2e10 Pa (sigmaxx / espx = E)
+
+epsy = (2.896e-9  +  2.416e-9) / 0.5
+
+nu = 0.23 (epsy /epsx = nu)
