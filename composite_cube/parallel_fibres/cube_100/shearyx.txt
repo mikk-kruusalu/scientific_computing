@@ -1,0 +1,4 @@
+tau_yx = 1000 Pa
+gamma_yx = 3.31e-7 / 0.5
+
+G = 6.04 GPa

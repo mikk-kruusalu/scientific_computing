@@ -1,0 +1,4 @@
+tau_xy = 1 kPa
+gamma_xy = 1.24e-6 / 0.97
+
+G = 831 MPa
