@@ -18,3 +18,15 @@ Kui aega on
 ## Teine projekt
 ### Radiaatori jahutuse simulatsioon, soojuslevi ja õhu liikumine.
 
+Minimaalne osa
+- [x] Blockmeshiga taustavõrk (`blockMeshDict`)
+- [x] LaplacianFoam simualtion diffusioonist, töötab
+- [ ] Üle vaadata, kuidas konstantse soojusvõimsuse ääretingumust kasutada
+- [ ] BouyantSimpleFoam simulatioon konvektsioonist
+- [ ] Radikas sisse lisada, (stl exists). SnappyHexMesh'iga uus võrk genereerida.
+- [ ] BouyandSimpleFoamiga uuesti simulatsioon, uue võrguga, kus radika välispind on const soojusvõimsusega
+- [ ] Paraviewst ilusad pildid + radika temp
+
+Võiks teha:
+- [ ] Radika sisepinnale const soojusvõimsus
+- [ ] Sim ümber teha, et kasutaks chtMultiRegionSimpleFoam (solver kasutad laplacianfoam radika jaoks, bouyant simple foami ümritseva õhu jaoks)
