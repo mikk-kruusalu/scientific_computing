@@ -46,7 +46,7 @@ log.*
 # snappyHexMesh files that are not snappyHexMeshDict
 **/constant/polyMesh/refinementHistory*
 **/constant/polyMesh/surfaceIndex*
-**/constant/triSurface
+#**/constant/triSurface
 
 # function object and post-processing data
 forces
