@@ -22,9 +22,10 @@ Minimaalne osa
 - [x] Blockmeshiga taustavõrk (`blockMeshDict`)
 - [x] LaplacianFoam simualtion diffusioonist, töötab
 - [ ] Üle vaadata, kuidas konstantse soojusvõimsuse ääretingumust kasutada
-- [ ] BouyantSimpleFoam simulatioon konvektsioonist
+- [x] BouyantSimpleFoam simulatioon konvektsioonist.
+- [ ] buoyantPimpleFoam suure kasti ääretingimused peavad olema nagu vaba õhk.
 - [ ] Radikas sisse lisada, (stl exists). SnappyHexMesh'iga uus võrk genereerida.
-- [ ] BouyandSimpleFoamiga uuesti simulatsioon, uue võrguga, kus radika välispind on const soojusvõimsusega
+- [ ] BouyantSimpleFoamiga uuesti simulatsioon, uue võrguga, kus radika välispind on const soojusvõimsusega
 - [ ] Paraviewst ilusad pildid + radika temp
 
 Võiks teha:
