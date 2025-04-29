@@ -9,58 +9,40 @@ FoamFile
 {
     version     2.0;
     format      ascii;
-    class       dictionary;
-    object      fvSolution;
+    class       volScalarField;
+    object      k;
 }
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 
-solvers
+dimensions      [0 2 -2 0 0 0 0];
+
+internalField   uniform 0.1;
+
+boundaryField
 {
-    "rho.*"
+    boxWalls
     {
-        solver          PCG;
-        preconditioner  DIC;
-        tolerance       0;
-        relTol          0;
+        type            kqRWallFunction;
+        value           uniform 0.1;
     }
 
-    p_rgh
+    radiator
     {
-        solver          PCG;
-        preconditioner  DIC;
-        tolerance       1e-8;
-        relTol          0.01;
+        type            kqRWallFunction;
+        value           uniform 0.1;
     }
 
-    p_rghFinal
+    battery
     {
-        $p_rgh;
-        relTol          0;
+        type            kqRWallFunction;
+        value           uniform 0.1;
     }
 
-    "(U|h|e|k|epsilon|R)"
+    ground
     {
-        solver          PBiCGStab;
-        preconditioner  DILU;
-        tolerance       1e-6;
-        relTol          0.1;
+        type            kqRWallFunction;
+        value           uniform 0.1;
     }
-
-    "(U|h|e|k|epsilon|R)Final"
-    {
-        $U;
-        relTol          0;
-    }
-}
-
-PIMPLE
-{
-    momentumPredictor yes;
-    nOuterCorrectors 1;
-    nCorrectors     2;
-    nNonOrthogonalCorrectors 0;
-    pRefCell        0;
-    pRefValue       1e5;
 }
 
 

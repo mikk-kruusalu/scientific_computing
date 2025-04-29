@@ -111,7 +111,7 @@ boundary
 
     boxWalls
     {
-        type patch;
+        type wall;
         faces
         (
             // xz-plane
