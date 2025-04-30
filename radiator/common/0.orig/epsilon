@@ -22,8 +22,8 @@ boundaryField
 {
     boxWalls
     {
-        type            epsilonWallFunction;
-        value           uniform 0.01;
+        type            inletOutlet;
+        inletValue      uniform 0.1;
     }
 
     radiator

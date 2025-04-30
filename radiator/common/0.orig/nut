@@ -22,7 +22,7 @@ boundaryField
 {
     boxWalls
     {
-        type            nutkWallFunction;
+        type            calculated;
         value           uniform 0;
     }
 

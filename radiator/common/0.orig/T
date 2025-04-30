@@ -22,8 +22,11 @@ boundaryField
 {
     radiator 
     {
-        type            fixedGradient;
-        gradient        uniform 100;
+        type            externalWallHeatFluxTemperature;
+        mode            power;
+        Q               100; // W
+        kappaMethod     fluidThermo;
+        value           $internalField;
     }
 
     ground
@@ -38,8 +41,8 @@ boundaryField
 
     boxWalls // ambient temperature 20C
     {
-        type            fixedValue;
-        value           uniform 293;
+        type            inletOutlet;
+        inletValue      uniform 293;
     }
 }
 
