@@ -56,6 +56,7 @@ postProcessing
 
 #exclude important folders and files:
 !0.orig/
+!0.orig
 !constant/thermophysicalProperties
 !constant/turbulenceProperties
 !system/
