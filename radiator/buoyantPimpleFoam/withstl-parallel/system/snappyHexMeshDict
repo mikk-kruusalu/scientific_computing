@@ -1,0 +1,128 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  2312                                  |
+|   \\  /    A nd           | Website:  www.openfoam.com                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       dictionary;
+    location    "system";
+    object      snappyHexMeshDict;
+}
+
+// ************************************************************************* //
+
+castellatedMesh true;
+snap            true;
+addLayers       false;
+
+geometry
+{
+    radiator.stl
+    {
+        type triSurfaceMesh;
+        name radiator_model;
+    }
+};
+
+castellatedMeshControls
+{
+    maxLocalCells 100000;
+    maxGlobalCells 2000000;
+    minRefinementCells 0;
+    resolveFeatureAngle 30;
+    nCellsBetweenLevels 3;
+
+    features
+    (
+        {
+            file "radiator.eMesh";
+            level 4;
+        }
+    );
+
+    refinementSurfaces
+    {
+        radiator_model
+        {
+            level (4 5);
+//            faceZone radiator_faceZone;
+//            cellZone radiator_cellZone;
+//            cellZoneInside inside;
+            patchInfo
+            {
+                type       wall;
+            }
+        }
+    }
+
+    refinementRegions
+    {
+        radiator_model
+        {
+            mode outside;
+            levels ((1E15 3));
+        }
+    }
+
+    locationInMesh (0.1 0.1 0.1); // Point inside your fluid domain
+    allowFreeStandingZoneFaces true;
+}
+
+snapControls
+{
+    nSmoothPatch 3;
+    tolerance 4.0;
+    nSolveIter 30;
+    nRelaxIter 5;
+    nFeatureSnapIter 10;
+}
+
+meshQualityControls
+{
+    maxNonOrtho 65;
+    maxBoundarySkewness 20;
+    maxInternalSkewness 4;
+    maxConcave 80;
+    minVol 1e-13;
+    minTetQuality 1e-9;
+    minArea -1;
+    minTwist 0.02;
+    minDeterminant 0.001;
+    minFaceWeight 0.02;
+    minVolRatio 0.01;
+    minTriangleTwist -1;
+    nSmoothScale 4;
+    errorReduction 0.75;
+}
+
+addLayersControls
+{
+    relativeSizes       true;
+    layers
+    {
+        // No layers defined
+    }
+    expansionRatio      1.2;
+    finalLayerThickness 0.3;
+    minThickness        0.1;
+    nGrow               0;
+    featureAngle        60;
+    slipFeatureAngle    30;
+    nRelaxIter          3;
+    nSmoothSurfaceNormals 1;
+    nSmoothNormals      3;
+    nSmoothThickness    10;
+    maxFaceThicknessRatio 0.5;
+    maxThicknessToMedialRatio 0.3;
+    minMedianAxisAngle  90;
+    nBufferCellsNoExtrude 0;
+    nLayerIter          50;
+}
+
+mergeTolerance 1e-6;
