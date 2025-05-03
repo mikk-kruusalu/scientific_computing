@@ -26,14 +26,14 @@ geometry
     radiator.stl
     {
         type triSurfaceMesh;
-        name radiator_model;
+        name radiator;
     }
 };
 
 castellatedMeshControls
 {
-    maxLocalCells 100000;
-    maxGlobalCells 2000000;
+    maxLocalCells 80000;
+    maxGlobalCells 1500000;
     minRefinementCells 0;
     resolveFeatureAngle 30;
     nCellsBetweenLevels 3;
@@ -42,15 +42,15 @@ castellatedMeshControls
     (
         {
             file "radiator.eMesh";
-            level 4;
+            level 3;
         }
     );
 
     refinementSurfaces
     {
-        radiator_model
+        radiator
         {
-            level (3 4);
+            level (2 3);
             faceZone radiator_faceZone;
             cellZone radiator_cellZone;
             cellZoneInside inside;
@@ -59,10 +59,10 @@ castellatedMeshControls
 
     refinementRegions
     {
-        radiator_model
+        radiator
         {
             mode inside;
-            levels ((1E15 3));
+            levels ((1E15 2));
         }
     }
 
@@ -74,7 +74,7 @@ snapControls
 {
     nSmoothPatch 3;
     tolerance 4.0;
-    nSolveIter 30;
+    nSolveIter 25;
     nRelaxIter 5;
     nFeatureSnapIter 10;
 }
@@ -102,11 +102,14 @@ addLayersControls
     relativeSizes       true;
     layers
     {
-        // No layers defined
+        radiator  // Add this
+        {
+            nSurfaceLayers 3;
+        }
     }
     expansionRatio      1.2;
-    finalLayerThickness 0.3;
-    minThickness        0.1;
+    finalLayerThickness 0.2;
+    minThickness        0.05;
     nGrow               0;
     featureAngle        60;
     slipFeatureAngle    30;
@@ -118,7 +121,7 @@ addLayersControls
     maxThicknessToMedialRatio 0.3;
     minMedianAxisAngle  90;
     nBufferCellsNoExtrude 0;
-    nLayerIter          50;
+    nLayerIter          40;
 }
 
 mergeTolerance 1e-6;
