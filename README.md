@@ -24,7 +24,7 @@ Minimaalne osa
 - [ ] Üle vaadata, kuidas konstantse soojusvõimsuse ääretingumust kasutada
 - [x] BouyantSimpleFoam simulatioon konvektsioonist.
 - [ ] buoyantPimpleFoam suure kasti ääretingimused peavad olema nagu vaba õhk.
-- [ ] Radikas sisse lisada, (stl exists). SnappyHexMesh'iga uus võrk genereerida.
+- [x] Radikas sisse lisada, (stl exists). SnappyHexMesh'iga uus võrk genereerida.
 - [ ] BouyantSimpleFoamiga uuesti simulatsioon, uue võrguga, kus radika välispind on const soojusvõimsusega
 - [ ] Paraviewst ilusad pildid + radika temp
 
