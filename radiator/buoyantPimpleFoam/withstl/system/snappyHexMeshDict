@@ -26,7 +26,7 @@ geometry
     radiator.stl
     {
         type triSurfaceMesh;
-        name radiator;
+        name radiator_model;
     }
 };
 
@@ -48,7 +48,7 @@ castellatedMeshControls
 
     refinementSurfaces
     {
-        radiator
+        radiator_model
         {
             level (3 4);
             faceZone radiator_faceZone;
@@ -59,7 +59,7 @@ castellatedMeshControls
 
     refinementRegions
     {
-        radiator
+        radiator_model
         {
             mode inside;
             levels ((1E15 3));
