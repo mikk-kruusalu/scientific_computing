@@ -42,7 +42,7 @@ castellatedMeshControls
     (
         {
             file "radiator.eMesh";
-            level 3;
+            level 4;
         }
     );
 
