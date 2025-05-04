@@ -1,11 +1,10 @@
 /*--------------------------------*- C++ -*----------------------------------*\
 | =========                 |                                                 |
 | \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
-|  \\    /   O peration     | Version:  2312                                  |
+|  \\    /   O peration     | Version:  v2312                                 |
 |   \\  /    A nd           | Website:  www.openfoam.com                      |
 |    \\/     M anipulation  |                                                 |
 \*---------------------------------------------------------------------------*/
-
 FoamFile
 {
     version     2.0;
@@ -15,11 +14,11 @@ FoamFile
     object      snappyHexMeshDict;
 }
 
-// ************************************************************************* //
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 
 castellatedMesh true;
 snap            true;
-addLayers       false;
+addLayers       true;
 
 geometry
 {
@@ -42,7 +41,7 @@ castellatedMeshControls
     (
         {
             file "radiator.eMesh";
-            level 3;
+            level 5;
         }
     );
 
@@ -51,9 +50,9 @@ castellatedMeshControls
         radiator
         {
             level (2 3);
-            faceZone radiator_faceZone;
-            cellZone radiator_cellZone;
-            cellZoneInside inside;
+            // faceZone radiator_faceZone;
+            // cellZone radiator_cellZone;
+            // cellZoneInside inside;
         }
     }
 
@@ -100,17 +99,19 @@ meshQualityControls
 addLayersControls
 {
     relativeSizes       true;
+
     layers
     {
-        radiator  // Add this
+        radiator
         {
-            nSurfaceLayers 3;
+            nSurfaceLayers 4;
         }
     }
+    
     expansionRatio      1.2;
-    finalLayerThickness 0.2;
+    finalLayerThickness 0.3;
     minThickness        0.05;
-    nGrow               0;
+    nGrow               1;
     featureAngle        60;
     slipFeatureAngle    30;
     nRelaxIter          3;
@@ -119,9 +120,11 @@ addLayersControls
     nSmoothThickness    10;
     maxFaceThicknessRatio 0.5;
     maxThicknessToMedialRatio 0.3;
-    minMedianAxisAngle  90;
+    minMedialAxisAngle  90;
     nBufferCellsNoExtrude 0;
     nLayerIter          40;
 }
 
 mergeTolerance 1e-6;
+
+// ************************************************************************* //

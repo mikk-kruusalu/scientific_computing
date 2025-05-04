@@ -3,10 +3,21 @@ cd "${0%/*}" || exit                                # Run from this directory
 . ${WM_PROJECT_DIR:?}/bin/tools/RunFunctions        # Tutorial run functions
 #------------------------------------------------------------------------------
 
+# Clean start
 restore0Dir
+
+# Pre-processing
+runApplication surfaceFeatureExtract
 runApplication blockMesh
+
+
+# Mesh generation with snapping
+runApplication snappyHexMesh -overwrite
+
+# Run solver
 runApplication $(getApplication)
 
+# For paraviwe
 touch radiator.foam
 
 #------------------------------------------------------------------------------
