@@ -33,7 +33,7 @@ geometry
 castellatedMeshControls
 {
     maxLocalCells 100000;
-    maxGlobalCells 2000000;
+    maxGlobalCells 2500000;
     minRefinementCells 0;
     resolveFeatureAngle 30;
     nCellsBetweenLevels 3;
@@ -71,7 +71,7 @@ castellatedMeshControls
     }
 
     locationInMesh (0.1 0.1 0.1); // Point inside your fluid domain
-    allowFreeStandingZoneFaces true;
+    allowFreeStandingZoneFaces false;
 }
 
 snapControls

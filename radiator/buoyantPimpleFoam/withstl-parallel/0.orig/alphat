@@ -1,7 +1,7 @@
 /*--------------------------------*- C++ -*----------------------------------*\
 | =========                 |                                                 |
 | \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
-|  \\    /   O peration     | Version:  v2412                                 |
+|  \\    /   O peration     | Version:  v2312                                 |
 |   \\  /    A nd           | Website:  www.openfoam.com                      |
 |    \\/     M anipulation  |                                                 |
 \*---------------------------------------------------------------------------*/
@@ -9,20 +9,42 @@ FoamFile
 {
     version     2.0;
     format      ascii;
-    class       dictionary;
-    object      decomposeParDict;
+    class       volScalarField;
+    object      alphat;
 }
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 
-numberOfSubdomains 10;
+dimensions      [1 -1 -1 0 0 0 0];
 
-method          simple;
+internalField   uniform 0;
 
-coeffs
+boundaryField
 {
-    n           (2 5 1);
+    boxWalls
+    {
+        type            inletOutlet;
+        inletValue      uniform 0.1;
+    }
+
+    "(radiator|radiator_model)"
+    {
+        type            compressible::alphatWallFunction;
+        value           uniform 0;
+    }
+
+    battery
+    {
+        type            compressible::alphatWallFunction;
+        value           uniform 0;
+    }
+
+    ground
+    {
+        type            compressible::alphatWallFunction;
+        value           uniform 0;
+    }
+
 }
 
 
 // ************************************************************************* //
-
