@@ -36,8 +36,8 @@ Minimaalne osa
 - [x] BouyantSimpleFoam simulatioon konvektsioonist.
 - [x] buoyantPimpleFoam suure kasti ääretingimused peavad olema nagu vaba õhk.
 - [x] Radikas sisse lisada, (stl exists). SnappyHexMesh'iga uus võrk genereerida.
-- [ ] Paraviewst ilusad pildid + radika temp
-    - [ ] Radika keskmine temperatuur ajast (koos standardhälbega)
+- [x] Paraviewst ilusad pildid + radika temp
+    - [x] Radika keskmine temperatuur ajast (koos standardhälbega)
     - [x] Streamlinedest ilus pilt viimase aja jaoks, nii, et kogu domeen on FeatureEdges asendis ja värvid kuidagi, et saab midagi aru ka. Selleks kasuta filtreid Stream Tracer ja Glyph.
     - [x] Eelmisest kiire video.
     - [x] Streamlinede pilt ka aja 0.1 jaoks, seal on mingi huvitav olukord, mida võiks klassis arutada.
