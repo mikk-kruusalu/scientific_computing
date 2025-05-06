@@ -38,9 +38,9 @@ Minimaalne osa
 - [x] Radikas sisse lisada, (stl exists). SnappyHexMesh'iga uus võrk genereerida.
 - [ ] Paraviewst ilusad pildid + radika temp
     - [ ] Radika keskmine temperatuur ajast (koos standardhälbega)
-    - [ ] Streamlinedest ilus pilt viimase aja jaoks, nii, et kogu domeen on FeatureEdges asendis ja värvid kuidagi, et saab midagi aru ka. Selleks kasuta filtreid Stream Tracer ja Glyph.
-    - [ ] Eelmisest kiire video.
-    - [ ] Streamlinede pilt ka aja 0.1 jaoks, seal on mingi huvitav olukord, mida võiks klassis arutada.
+    - [x] Streamlinedest ilus pilt viimase aja jaoks, nii, et kogu domeen on FeatureEdges asendis ja värvid kuidagi, et saab midagi aru ka. Selleks kasuta filtreid Stream Tracer ja Glyph.
+    - [x] Eelmisest kiire video.
+    - [x] Streamlinede pilt ka aja 0.1 jaoks, seal on mingi huvitav olukord, mida võiks klassis arutada.
     - [ ] Võrgust pildid. Läbilõige xy-tasandil, nii et radikas oleks näha ja sama xz-tasandi jaoks. Selleks on Slice filter. 
 
 Võiks teha:
