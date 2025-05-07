@@ -1,6 +1,6 @@
 #!/bin/bash
 #SBATCH --partition=common    ### Partition
-#SBATCH --time=04:00:00       ### Time limit         -t
+#SBATCH --time=08:00:00       ### Time limit         -t
 #SBATCH --nodes=1             ### Number of Nodes    -N
 #SBATCH --ntasks-per-node=10  ### Number of tasks (MPI processes)
 #SBATCH --cpus-per-task=1     ### Number of threads per task (OMP threads)
