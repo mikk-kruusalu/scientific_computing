@@ -5,10 +5,16 @@ slots=3
 
 for n_tasks in $(seq 8 4 64); do
     echo "Running with $n_tasks tasks..."
-
     # Backup n_tasks before we change it
     ntasks=$n_tasks
     left=$ntasks
+
+    # # Clean up from previous run
+    # echo "Cleaning up previous processor directories..."
+    # rm -rf processor*
+
+    # echo "Removing previous log file for this run..."
+    # rm -f log.run$n_tasks
 
     # Update decomposeParDict
     sed -i "s/^\s*numberOfSubdomains.*/numberOfSubdomains $ntasks;/" system/decomposeParDict
@@ -34,12 +40,13 @@ for n_tasks in $(seq 8 4 64); do
     sed -i "s/^\s*n\s*(.*);/    n           $COEFF_STRING;/" system/decomposeParDict
 
     # Run OpenFOAM commands and time them
-    # decomposePar -force
-    # start=$(date +%s)
-    # srun buoyantPimpleFoam -parallel > log.$ntasks
-    # end=$(date +%s)
-    # reconstructPar -newTimes
+    decomposePar -force
+    start=$(date +%s)
+    srun buoyantPimpleFoam -parallel > log.run$ntasks
+    end=$(date +%s)
+    reconstructPar -newTimes
 
     elapsed_time=$((end - start))
     echo "$ntasks,$elapsed_time" >> parallel_run.csv
+
 done
