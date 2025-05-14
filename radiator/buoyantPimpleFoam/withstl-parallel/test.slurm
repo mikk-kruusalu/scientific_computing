@@ -9,12 +9,12 @@ for n_tasks in $(seq 8 4 64); do
     ntasks=$n_tasks
     left=$ntasks
 
-    # # Clean up from previous run
-    # echo "Cleaning up previous processor directories..."
-    # rm -rf processor*
+    # Clean up from previous run
+    echo "Cleaning up previous processor directories..."
+    rm -rf processor*
 
-    # echo "Removing previous log file for this run..."
-    # rm -f log.run$n_tasks
+    echo "Removing previous log file for this run..."
+    rm -f log.run$n_tasks
 
     # Update decomposeParDict
     sed -i "s/^\s*numberOfSubdomains.*/numberOfSubdomains $ntasks;/" system/decomposeParDict
