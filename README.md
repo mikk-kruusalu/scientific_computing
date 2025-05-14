@@ -46,3 +46,17 @@ Minimaalne osa
 Võiks teha:
 - [ ] Radika sisepinnale const soojusvõimsus
 - [ ] Sim ümber teha, et kasutaks chtMultiRegionSimpleFoam (solver kasutad laplacianfoam radika jaoks, bouyant simple foami ümritseva õhu jaoks)
+
+## Kolmas projekt
+### Teise projekti paraleeliseerumise hindamine
+Teise projekti paraleelseks tegemine tähendab, et tõstame `#SBATCH --ntasks` arvu ja ideaalis võiks simulatsioon kiiremini laheneda.
+Selleks teeme loogika, mis muudab vajalikke parameetreid, jooksutab simulatsioone ja mõõdab kulunud aega.
+
+- [x] Teha fail, mis valmistab ette õiged parameetrid simulatsiooniks (`intern.slurm`)
+    - [x] `ntasks=N` väärtust slurm failis
+    - [x] decomposeParDict `numberOfSubdomains N;` ja coeffs `n           (3 3 2);`
+        - [x] teha loop, mis võtab `N` ja jagab `n` muutujale laiali `(N/3 N/3 N/3 + jääk)` (või midagi)
+- [x] Teha loogika, mis logib `N` ja `srun buoyantPimpleFoam -parallel ` aega (`intern.slurm`)
+- [x] Mõelda välja kuidas jooksutada runne (`manager.slurm`)
+    - [ ] Kas teha kuidagi hoopis uus `withstl=parallel` kaust iga erineva `N` jooksu jaoks
+    - [x] Kas teha järjest neid jookse (lihtsam)
