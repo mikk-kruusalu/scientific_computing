@@ -6,6 +6,7 @@ mesh.*
 netgen.prof
 entities.sif
 *.avi
+withstl-parallel-*
 
 # Created by https://www.toptal.com/developers/gitignore/api/openfoam
 # Edit at https://www.toptal.com/developers/gitignore?templates=openfoam
