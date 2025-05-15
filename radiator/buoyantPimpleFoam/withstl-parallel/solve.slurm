@@ -10,11 +10,13 @@ export OMP_NUM_THREADS=$SLURM_CPUS_PER_TASK     ### setup environment
 module load rocky8-spack openfoam openmpi
 
 decomposePar -force
+
 start=$(date +%s)
 srun buoyantPimpleFoam -parallel
 end=$(date +%s)
-elapsed=$(end - start)
+elapsed=$((end - start))
 echo "Elapsed time $elapsed s"
-sed -i '/^$SLURM_NTASKS_PER_NODE,*/ s/$/,$elapsed,$SLURM_JOB_ID' parallel-test.csv
+sed -i "/^$SLURM_NTASKS/ s/$/$elapsed,$SLURM_JOB_ID/" parallel-test.csv
+
 reconstructPar -newTimes
 

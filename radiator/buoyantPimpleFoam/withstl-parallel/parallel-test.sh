@@ -5,6 +5,7 @@ CORES=$1
 echo "Running with $CORES cores"
 
 # Cleanup from any previous runs
+echo "Remove previous decomposition"
 rm -rf processor*
 rm -rf 0.[0-9]*
 mkdir 0
@@ -53,7 +54,12 @@ sed -i "s/^\s*n\s*(.*);/    n           $COEFF_STRING;/" system/decomposeParDict
 # Change ntasks value 
 sed -i "s/^#SBATCH --ntasks=.*/#SBATCH --ntasks=$CORES/" solve.slurm
    
-echo "$CORES,\"$COEFF_STRING\",$elapsed" >> parallel-test.csv
+
+if [ ! -f "parallel-test.csv" ]; then
+    echo "cores,coeff_string,elapsed_time,jobid" >> parallel-test.csv
+fi
+
+echo "$CORES,\"$COEFF_STRING\"," >> parallel-test.csv
 
 sbatch solve.slurm
 
