@@ -55,11 +55,10 @@ sed -i "s/^\s*n\s*(.*);/    n           $COEFF_STRING;/" system/decomposeParDict
 sed -i "s/^#SBATCH --ntasks=.*/#SBATCH --ntasks=$CORES/" solve.slurm
    
 
-if [ ! -f "parallel-test.csv" ]; then
-    echo "cores,coeff_string,elapsed_time,jobid" >> parallel-test.csv
+if [ ! -f "../parallel-run.csv" ]; then
+  echo "cores,coeff_string,elapsed_time,jobid" >> ../parallel-run.csv
 fi
-
-echo "$CORES,\"$COEFF_STRING\"," >> parallel-test.csv
+echo "$CORES,\"$COEFF_STRING\"," >> ../parallel-run.csv
 
 sbatch solve.slurm
 
