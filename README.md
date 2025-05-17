@@ -60,3 +60,11 @@ Selleks teeme loogika, mis muudab vajalikke parameetreid, jooksutab simulatsioon
 - [x] Mõelda välja kuidas jooksutada runne (`manager.slurm`)
     - [ ] Kas teha kuidagi hoopis uus `withstl=parallel` kaust iga erineva `N` jooksu jaoks
     - [x] Kas teha järjest neid jookse (lihtsam)
+
+### Kasutamine
+
+1. Navigeeri kausta `radiator/buoyantPimpleFoam`.
+2. Kasuta skripti, et teha arvutuse jaoks uus kaust `bash parallel-dir.sh n`, ku `n` on tuumade arv.
+3. Navigeeri kausta `withstl-parallel-n`.
+4. Kasuta skripti, et automaatselt muuta domeeni dekompositsiooni ja sisse anda klastri töö `bash parallel-test.sh n`.
+
