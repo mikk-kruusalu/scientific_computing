@@ -16,7 +16,7 @@ srun buoyantPimpleFoam -parallel
 end=$(date +%s)
 elapsed=$((end - start))
 echo "Elapsed time $elapsed s"
-sed -i "/^$SLURM_NTASKS/ s/$/$elapsed,$SLURM_JOB_ID/" parallel-test.csv
+sed -i "/^$SLURM_NTASKS/ s/$/$elapsed,$SLURM_JOB_ID/" ../parallel-run.csv
 
 reconstructPar -newTimes
 
