@@ -68,3 +68,5 @@ Selleks teeme loogika, mis muudab vajalikke parameetreid, jooksutab simulatsioon
 3. Navigeeri kausta `withstl-parallel-n`.
 4. Kasuta skripti, et automaatselt muuta domeeni dekompositsiooni ja sisse anda klastri töö `bash parallel-test.sh n`.
 
+NB! Enne seda loetelu peab olema loomulikult ka võrk genereeritud põhikaustas, mille järgi paralleelse arvutuse jaoks kaustu tehakse. See tähendab, et kui varasemast võrku ei ole, tuleb teha põhikaustas `sbatch mesh.slurm`.
+
